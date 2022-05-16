@@ -11,7 +11,7 @@ import { AuthInterceptor } from 'src/app/interceptor/auth.interceptor';
     styleUrls: ['./login.component.css']
   })
 
-  export class LoginComponent implements OnInit { 
+  export class LoginComponent implements OnInit {
     constructor(public authService: AuthService, public router: Router) {}
     ngOnInit(): void {}
 
