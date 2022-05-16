@@ -1,22 +1,16 @@
 <mat-card>
     <mat-tab-group mat-align-tabs="center">
-        <mat-tab label="LOGIN"> 
+        <mat-tab label="LOGIN">
             <mat-card-content>
                 <br/>
                 <form #loginForm="ngForm" (ngSubmit)="authLogin(loginForm)">
-                  <mat-error *ngIf="successMessage">
-                    {{successMessage}}
-                  </mat-error>
-                  <mat-error *ngIf="errorMessage">
-                    {{errorMessage}}
-                  </mat-error>
-                  <mat-form-field appearance="outline">
+                  <mat-form-field>
                     <input matInput pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" placeholder="Enter User Email" id="userEmail" #userEmail="ngModel" name="userEmail" ngModel required>
                     <mat-error>
                       Please provide a valid email address
                     </mat-error>
                   </mat-form-field>
-                  <mat-form-field appearance="outline">
+                  <mat-form-field>
                     <input matInput [type]="hide ? 'password' : 'text'" id="userPassword" placeholder="Enter User Password" #userPassword="ngModel" name="userPassword" ngModel required>
                     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     <mat-error>
@@ -34,51 +28,51 @@
                 <h5>All right reserved 2022</h5>
               </mat-card-content>
         </mat-tab>
-        <mat-tab label="SIGNUP"> 
+        <mat-tab label="SIGNUP">
             <mat-card-content>
                 <br/>
-                <form #signUpForm="ngForm">
-                  <mat-error *ngIf="successMessage">
-                    {{successMessage}}
-                  </mat-error>
-                  <mat-error *ngIf="errorMessage">
-                    {{errorMessage}}
-                  </mat-error>
-                  <mat-form-field appearance="outline">
-                    <input matInput placeholder="Enter User Email" name="username" required>
+                <form #signUpForm="ngForm" (ngSubmit)="authSignUp(signUpForm)">
+                  <mat-form-field>
+                    <input matInput placeholder="Enter Full Name" minlength="3"  id="userName" #userName="ngModel" name="userName" ngModel required>
                     <mat-error>
-                      Please provide a valid email address
+                      Please provide User Name
                     </mat-error>
                   </mat-form-field>
-                  <mat-form-field appearance="outline">
-                    <input matInput [type]="hide ? 'password' : 'text'" placeholder="Enter User Password" name="password" required>
+                  <mat-form-field>
+                    <input matInput placeholder="Enter Email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" id="userEmail" #userEmail="ngModel" name="userEmail" ngModel required>
+                    <mat-error>
+                      Please provide a valid Email Address
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput [type]="hide ? 'password' : 'text'" placeholder="Enter Password" name="userPassword" id="userPassword" #userPassword="ngModel" ngModel required>
                     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     <mat-error>
                       Please provide a valid password
                     </mat-error>
                   </mat-form-field>
-                  <mat-form-field appearance="outline">
-                    <input matInput type="text" placeholder="Enter Valid Address" name="address" required>
+                  <mat-form-field>
+                    <input matInput type="text" placeholder="Enter Address" name="userAddress" id="userAddress" #userAddress="ngModel" ngModel required>
                     <mat-error>
-                      Please provide a valid password
+                      Please provide User Address
                     </mat-error>
                   </mat-form-field>
-                  <mat-form-field appearance="outline">
-                    <input matInput type="text" pattern="/[0-9\+\-\ ]/" placeholder="Enter Valid Contact Number" name="contactnumber" required>
+                  <mat-form-field>
+                    <input matInput type="text" minlength="10" maxlength="10" placeholder="Enter Contact Number" id="userContactNumber" #userContactNumber="ngModel" name="userContactNumber" ngModel required>
                     <mat-error>
-                      Please provide a valid password
+                      Please provide valid Contact Number
                     </mat-error>
                   </mat-form-field>
                   <br/>
-                  <button mat-raised-button color="accent">
-                      <mat-icon>input</mat-icon>
+                  <button mat-raised-button [disabled]="signUpForm.invalid" title="SignUpNow" type="submit" color="accent">
+                      <mat-icon>verified_user</mat-icon>
                       SIGNUP
                   </button>
                 </form>
                 <br/>
                 <br/>
                 <h5>All right reserved 2022</h5>
-              </mat-card-content>    
+              </mat-card-content>
         </mat-tab>
       </mat-tab-group>
   </mat-card>

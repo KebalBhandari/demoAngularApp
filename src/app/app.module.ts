@@ -18,6 +18,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTabsModule} from '@angular/material/tabs';
 import { AuthModule } from './auth/auth.module';
 import { LoginComponent } from './auth/login/login.component';
@@ -38,6 +39,7 @@ import { MatPasswordStrengthModule } from '@angular-material-extensions/password
     MatTableModule,
     MatTabsModule,
     AuthModule,
+    MatSnackBarModule,
   MatMenuModule,
   MatIconModule,
   MatButtonModule,
