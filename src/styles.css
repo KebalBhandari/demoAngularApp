@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+body {
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    background-image: linear-gradient(to right top, #42601a, #005a36, #00514c, #004556, #003751, #03334b, #052f46, #072b40, #002f3e, #01323b, #093437, #143633);
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

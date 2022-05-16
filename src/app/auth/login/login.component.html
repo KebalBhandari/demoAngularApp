@@ -1,0 +1,84 @@
+<mat-card>
+    <mat-tab-group mat-align-tabs="center">
+        <mat-tab label="LOGIN"> 
+            <mat-card-content>
+                <br/>
+                <form #loginForm="ngForm" (ngSubmit)="authLogin(loginForm)">
+                  <mat-error *ngIf="successMessage">
+                    {{successMessage}}
+                  </mat-error>
+                  <mat-error *ngIf="errorMessage">
+                    {{errorMessage}}
+                  </mat-error>
+                  <mat-form-field appearance="outline">
+                    <input matInput pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" placeholder="Enter User Email" id="userEmail" #userEmail="ngModel" name="userEmail" ngModel required>
+                    <mat-error>
+                      Please provide a valid email address
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <input matInput [type]="hide ? 'password' : 'text'" id="userPassword" placeholder="Enter User Password" #userPassword="ngModel" name="userPassword" ngModel required>
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <mat-error>
+                      Please provide a valid password
+                    </mat-error>
+                  </mat-form-field>
+                  <br/>
+                  <button mat-raised-button [disabled]="loginForm.invalid" type="submit" color="primary">
+                      <mat-icon>input</mat-icon>
+                      LOGIN
+                  </button>
+                </form>
+                <br/>
+                <br/>
+                <h5>All right reserved 2022</h5>
+              </mat-card-content>
+        </mat-tab>
+        <mat-tab label="SIGNUP"> 
+            <mat-card-content>
+                <br/>
+                <form #signUpForm="ngForm">
+                  <mat-error *ngIf="successMessage">
+                    {{successMessage}}
+                  </mat-error>
+                  <mat-error *ngIf="errorMessage">
+                    {{errorMessage}}
+                  </mat-error>
+                  <mat-form-field appearance="outline">
+                    <input matInput placeholder="Enter User Email" name="username" required>
+                    <mat-error>
+                      Please provide a valid email address
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <input matInput [type]="hide ? 'password' : 'text'" placeholder="Enter User Password" name="password" required>
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <mat-error>
+                      Please provide a valid password
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <input matInput type="text" placeholder="Enter Valid Address" name="address" required>
+                    <mat-error>
+                      Please provide a valid password
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <input matInput type="text" pattern="/[0-9\+\-\ ]/" placeholder="Enter Valid Contact Number" name="contactnumber" required>
+                    <mat-error>
+                      Please provide a valid password
+                    </mat-error>
+                  </mat-form-field>
+                  <br/>
+                  <button mat-raised-button color="accent">
+                      <mat-icon>input</mat-icon>
+                      SIGNUP
+                  </button>
+                </form>
+                <br/>
+                <br/>
+                <h5>All right reserved 2022</h5>
+              </mat-card-content>    
+        </mat-tab>
+      </mat-tab-group>
+  </mat-card>
