@@ -24,9 +24,10 @@ import { AuthModule } from './auth/auth.module';
 import { LoginComponent } from './auth/login/login.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent,HeaderComponent,LoginComponent],
+  declarations: [AppComponent, FooterComponent,HeaderComponent,LoginComponent, DashboardComponent],
   imports: [
     HttpClientModule,
     MatPasswordStrengthModule.forRoot(),

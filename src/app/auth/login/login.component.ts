@@ -64,7 +64,7 @@ import Swal from 'sweetalert2';
       window.localStorage.setItem('token', 'Bearer ' + result.token);
 
       setTimeout(() => {
-        this.router.navigateByUrl('/').then();
+        window.location.reload();
       }, 1000);
     },
     error: (err) => {
@@ -130,7 +130,7 @@ import Swal from 'sweetalert2';
 
           if (role[0] === 'admin') {
             setTimeout(() => {
-              this.router.navigateByUrl('/admin/dashboard').then();
+              this.router.navigateByUrl('/dashboard').then();
             }, 1000);
           } else {
             setTimeout(() => {
